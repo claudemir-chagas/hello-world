@@ -16,7 +16,7 @@ router.get('/', async (ctx) => {
 });
 
 // path: '/heath'
-router.get('/heath', async (ctx) => {
+router.get('/health', async (ctx) => {
   ctx.body = 'Ok!';
 });
 
