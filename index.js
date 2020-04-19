@@ -4,6 +4,10 @@ const http = require('http');
 const Koa = require('koa'); // koa@2
 const KoaRouter = require('koa-router');
 
+// Endpoints
+const home = require('./src/home');
+const health = require('./src/health');
+
 // Create app.
 const app = new Koa();
 
@@ -11,14 +15,10 @@ const app = new Koa();
 const router = new KoaRouter();
 
 // path: '/'
-router.get('/', async (ctx) => {
-  ctx.body = 'Hello World!';
-});
+router.get('/', home);
 
 // path: '/heath'
-router.get('/health', async (ctx) => {
-  ctx.body = 'Ok!';
-});
+router.get('/health', health);
 
 app.use(router.routes());
 app.use(router.allowedMethods());
