@@ -1,3 +1,3 @@
-module.export = async (ctx) => {
+module.exports = async (ctx) => {
   ctx.body = 'Hello World!';
 };
